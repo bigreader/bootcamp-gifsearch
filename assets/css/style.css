@@ -1,6 +1,11 @@
+
+
+/* RESULTS GALLERY */
+
 #results {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-start;
 	margin: -0.5rem;
 }
 
@@ -53,17 +58,58 @@
 	color: black;
 
 	opacity: 1;
-	transition: opacity 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 
 .result:hover img {
 	box-shadow: 0 0.5em 1em #ddd;
-	filter: brightness(1.05);
 }
 
-.result:hover .rating {
+.result:hover .ratingx {
 	opacity: 0;
 }
+
+
+/* PLACEHOLDERS */
+
+.result.placeholder img {
+	height: 150px;
+	background: #ddd;
+}
+
+.result.placeholder:hover img {
+	box-shadow: none;
+}
+
+.result.placeholder:hover .rating {
+	opacity: 1;
+}
+
+
+/* PLAYING GIF */
+
+.result img[data-pause="play"] + .rating {
+	font-size: 0.33rem;
+	width: 1.5em;
+	border-radius: 0.75em;
+	
+	color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+
+	background-image: url("../img/play.svg");
+	background-size: contain;
+	animation: pulse 1s linear infinite;
+}
+
+@keyframes pulse {
+  0%   { background-color: rgba(255, 255, 255, 0.8) }
+  50%  { background-color: rgba(255, 255, 255, 1.0) }
+  100% { background-color: rgba(255, 255, 255, 0.8) }
+}
+
+
+/* BACKDROP-FILTER */
 
 @supports (-webkit-backdrop-filter: blur(5px)) {
 	/* check it out in Safari or Edge for fancy blur ratings! */
@@ -75,4 +121,20 @@
 		-webkit-backdrop-filter: blur(5px);
 	}
 
+	.result img[data-pause="play"] + .rating {
+		animation: pulse-blur 1s linear infinite;
+	}
+
+	@keyframes pulse-blur {
+  	0%   { background-color: rgba(255, 255, 255, 0.2) }
+  	50%  { background-color: rgba(255, 255, 255, 0.4) }
+  	100% { background-color: rgba(255, 255, 255, 0.2) }
+	}
+
 }
+
+
+
+
+
+
