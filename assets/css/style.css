@@ -1,0 +1,78 @@
+#results {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -0.5rem;
+}
+
+.result {
+	width: 100%;
+	padding: 0.5rem;
+	position: relative;
+}
+
+@media (min-width: 576px) {
+	.result { width: 50%; }
+}
+
+@media (min-width: 768px) {
+	.result { width: 50%; }
+}
+
+@media (min-width: 992px) {
+	.result { width: 33.33%; }
+}
+
+@media (min-width: 1200px) {
+	.result { width: 25%; }
+}
+
+.result img {
+	width: 100%;
+	border-radius: 2px;
+	box-shadow: 0 0 0 #ddd;
+	transition: box-shadow 0.1s ease-out;
+}
+
+.result .rating {
+	position: absolute;
+	left: 1rem;
+	bottom: 1rem;
+
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-align: center;
+
+	margin: 0;
+	padding: 0 0.25em;
+	min-width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	border-radius: 0.33em;
+	
+	background: rgba(255, 255, 255, 0.9);
+	color: black;
+
+	opacity: 1;
+	transition: opacity 0.2s ease-out;
+}
+
+.result:hover img {
+	box-shadow: 0 0.5em 1em #ddd;
+	filter: brightness(1.05);
+}
+
+.result:hover .rating {
+	opacity: 0;
+}
+
+@supports (-webkit-backdrop-filter: blur(5px)) {
+	/* check it out in Safari or Edge for fancy blur ratings! */
+
+	.result .rating {
+		background: rgba(255, 255, 255, 0.5);
+		color: rgba(0, 0, 0, 0.8);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+	}
+
+}
