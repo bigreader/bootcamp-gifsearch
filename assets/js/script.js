@@ -15,7 +15,7 @@ $(document).ready(function() {
 		for (var i=0; i<12; i++) {
 			placeholders.push($('\
 				<div class="result placeholder">\
-					<img src="" />\
+					<img />\
 					<p class="rating"></p>\
 				</div>'));
 		}
