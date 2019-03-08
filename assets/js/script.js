@@ -2,7 +2,7 @@ const apiKey = "ex21C6CKlCuX6rpBRZEXgZyk3zOODA2v"; // very secure
 const apiEndpointSearch = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&";
 const usePlaceholders = true;
 
-var savedSearches = ["garnet", "amethyst", "lapis lazuli", "peridot", "bismuth", "malachite", "sugilite", "sardonyx", "blue diamond"];
+var savedSearches = ["bill cipher", "mabel pines", "grunkle stan", "over the garden wall", "coraline", "kubo"];
 
 
 $(document).ready(function() {
